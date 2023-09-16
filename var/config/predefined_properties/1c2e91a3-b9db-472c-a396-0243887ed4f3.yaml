@@ -1,0 +1,15 @@
+pimcore:
+    properties:
+        predefined:
+            definitions:
+                1c2e91a3-b9db-472c-a396-0243887ed4f3:
+                    name: type
+                    description: ''
+                    key: type
+                    type: select
+                    data: "'CD','Vinyl'"
+                    config: ''
+                    ctype: object
+                    inheritable: false
+                    creationDate: 1694065966
+                    modificationDate: 1694066440

@@ -1,0 +1,5 @@
+custom_product:
+    resource: "@CustomProductBundle/src/Controller/"
+    type:     annotation
+    prefix:   /
+

@@ -1,0 +1,35 @@
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        # automatically injects dependencies in your services
+        autowire: true
+        # automatically registers your services as commands, event subscribers, etc.
+        autoconfigure: true
+        # this means you cannot fetch services directly from the container via $container->get()
+        # if you need to do this, you can override this setting on individual services
+        public: false
+    # src/CustomProductLogicBundle/Resources/config/services.yaml
+
+    Shopify\CustomProductLogicBundle\EventListener\ProductUpdateListener:
+        arguments:
+            $API_KEY_SHOPIFY: "%env(resolve:API_KEY_SHOPIFY)%"
+            $SECRET_KEY_SHOPIFY: "%env(resolve:SECRET_KEY_SHOPIFY)%"
+        tags:
+            - {
+                  name: "kernel.event_listener",
+                  event: "pimcore.dataobject.postUpdate",
+                  method: "onProductPostUpdate",
+              }
+
+    # controllers are imported separately to make sure they're public
+    # and have a tag that allows actions to type-hint services
+    Shopify\CustomProductLogicBundle\Controller\:
+        resource: "../src/Controller"
+        public: true
+        tags: ["controller.service_arguments"]
+# add more services, or override services that need manual wiring
+#    Shopify\CustomProductLogicBundle\ExampleClass:
+#        arguments:
+#            - "@service_id"
+#            - "plain_value"
+#            - "%parameter%"

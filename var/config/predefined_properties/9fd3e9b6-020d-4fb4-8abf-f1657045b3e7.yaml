@@ -1,0 +1,15 @@
+pimcore:
+    properties:
+        predefined:
+            definitions:
+                9fd3e9b6-020d-4fb4-8abf-f1657045b3e7:
+                    name: name
+                    description: ''
+                    key: name
+                    type: text
+                    data: ''
+                    config: ''
+                    ctype: object
+                    inheritable: false
+                    creationDate: 1694066069
+                    modificationDate: 1694066480

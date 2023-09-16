@@ -1,0 +1,15 @@
+pimcore:
+    properties:
+        predefined:
+            definitions:
+                232fabe2-c719-4233-ab5b-c7426304ff9b:
+                    name: price
+                    description: ''
+                    key: price
+                    type: text
+                    data: ''
+                    config: ''
+                    ctype: object
+                    inheritable: false
+                    creationDate: 1694066126
+                    modificationDate: 1694066480
